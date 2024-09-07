@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  airflow:
+    build: .
+    container_name: airflow
+    restart: always
+    environment:
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./data:/opt/airflow/data
+    networks:
+      - airflow_network
+
+  snowflake:
+    image: snowflakedb/snowflake:latest
+    container_name: snowflake
+    restart: always
+    environment:
+      - SNOWFLAKE_USER=<your_snowflake_username>
+      - SNOWFLAKE_PASSWORD=<your_snowflake_password>
+      - SNOWFLAKE_ACCOUNT=<your_snowflake_account>
+    networks:
+      - airflow_network
+
+networks:
+  airflow_network:
+    driver: bridge

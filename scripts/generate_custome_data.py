@@ -33,3 +33,17 @@ with open(output_file, mode='w', newline='') as file:
             fake.address(),           # address
             fake.date_of_birth(),     # date_of_birth
         ])
+
+
+for _ in range(num_records):
+    customer_data = [
+        fake.unique.uuid4(),      # customer_id
+        fake.first_name(),        # first_name
+        fake.last_name(),         # last_name
+        fake.email(),             # email
+        fake.phone_number(),      # phone_number
+        fake.address(),           # address
+        fake.date_of_birth(),     # date_of_birth
+    ]
+    print(customer_data)  # Debugging: print each generated record
+    writer.writerow(customer_data)

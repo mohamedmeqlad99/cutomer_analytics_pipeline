@@ -15,3 +15,7 @@ conn = snowflake.connector.connect(
 )
 
 query = "SELECT * FROM customers"
+
+df = pd.read_sql(query, conn)
+
+conn.close()

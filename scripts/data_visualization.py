@@ -30,3 +30,15 @@ plt.xticks(rotation=45)
 plt.grid(True)
 plt.tight_layout()
 plt.show()
+
+# -- email domains --
+
+df['email_domain'] = df['email'].apply(lambda x: x.split('@')[-1])  # Extract email domain
+email_domain_counts = df['email_domain'].value_counts().head(10)
+plt.figure(figsize=(10, 6))
+sns.barplot(x=email_domain_counts.index, y=email_domain_counts.values)
+plt.title('Top 10 Email Domains')
+plt.xlabel('Email Domain')
+plt.ylabel('Count')
+plt.xticks(rotation=45)
+plt.show()

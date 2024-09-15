@@ -15,7 +15,7 @@ Technologies Used:
 - Python: Creates data visualizations and connects to Snowflake.
 - Matplotlib, Seaborn, Plotly: Visualizes customer data.
 
-  ![Customer Data Pipeline](./images/Screenshot from 2024-09-15 23-16-39.png)
+  ![Customer Data Pipeline](../images/Screenshot from 2024-09-15 23-16-39.png)
 
 Setup Instructions
 --------------------

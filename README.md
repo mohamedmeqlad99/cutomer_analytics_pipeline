@@ -15,19 +15,6 @@ Technologies Used:
 - Python: Creates data visualizations and connects to Snowflake.
 - Matplotlib, Seaborn, Plotly: Visualizes customer data.
 
-Project Structure
---------------------
-.
-├── dags/
-│   └── customer_pipeline_dag.py      # Airflow DAG script to orchestrate the pipeline
-├── scripts/
-│   ├── data_generator.py             # Generates fake customer data using Faker
-│   ├── data_visualization.py         # Python script to visualize data from Snowflake
-│   └── dash_app.py                   # Optional interactive dashboard using Dash
-├── docker-compose.yml                # Docker configuration for Airflow
-├── README.txt                        # Project documentation
-└── requirements.txt                  # Python dependencies
-
 Setup Instructions
 --------------------
 Prerequisites:
